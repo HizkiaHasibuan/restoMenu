@@ -1,11 +1,18 @@
 var mysql = require('mysql');
+const Sequelize = require('sequelize');
 
 var con = mysql.createConnection({
-    host: process.env.viaduct.proxy.rlwy.net,
-    user: process.env.root,
-    password: process.env.c4H2E3BD2hA5gG1EAfBCgdGF1hd6gD6E,
-    database: process.env.railway
+    host: process.env.DB_HOST,
+    user: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DATABSE
 });
+
+// const db = new Sequelize(DB_URI, (
+//     define: {
+//         timestamps: false
+//     }
+// ));
 
 // con.connect(function (err) {
 //     if (err) throw err;
