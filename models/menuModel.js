@@ -4,24 +4,16 @@ dotenv.config();
 class menuModel {
     static getAllMenu(req, res, next) {
         let query = `SELECT * FROM ${process.env.DATABASE}.menus`
-        // con.query(query, function(err, result, fields) {
-            // if (err) {
-            //     // res.status(400).send(err);
-            //     res.send(con);
-            // }
-            //     // res.send('ayolah');
-            //     res.send(result);
+        con.query(query, function(err, result, fields) {
+            if (err) {
+                res.status(400).send(err);
+                // res.send(con);
+            }
+                // res.send('ayolah');
+                res.send(result);
             
-        // });
+        });
         
-            con.connect((err) => {
-              if (err) {
-                console.error('Error connecting to MySQL:', err);
-                setTimeout(handleDisconnect, 2000);
-              } else {
-                console.log('Connected to MySQL database');
-              }
-            });
     }
 
     static getMenu(req, res, next) {

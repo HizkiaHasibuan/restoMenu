@@ -9,4 +9,12 @@ var con = mysql.createConnection({
     port: process.env.DB_PORT
 });
 
+con.connect((err) => {
+    if (err) {
+      console.error('Error connecting to MySQL:', err);
+      return;
+    }
+    console.log('Connected to MySQL database');
+  });
+
 module.exports = con;
