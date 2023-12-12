@@ -9,7 +9,7 @@ class menuModel {
                 // res.status(400).send(err);
                 res.send('ayolah');
             }
-                res.send('ayolah');
+                // res.send('ayolah');
                 res.send(result);
         });
     }
