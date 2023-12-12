@@ -2,12 +2,11 @@ const con = require('../config/config');
 
 class menuModel {
     static getAllMenu(req, res, next) {
-        let query = `SELECT * FROM ${process.env.DATABASE}.menus
-                    WHERE deleted_at IS NULL`
+        let query = `SELECT * FROM ${process.env.DATABASE}.menus`
         con.query(query, function(err, result, fields) {
             if (err) {
-                // res.status(400).send(err);
-                res.send('ayolah');
+                res.status(400).send(err);
+                // res.send('ayolah');
             }
                 // res.send('ayolah');
                 res.send(result);
