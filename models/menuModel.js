@@ -6,8 +6,8 @@ class menuModel {
         let query = `SELECT * FROM ${process.env.DATABASE}.menus`
         con.query(query, function(err, result, fields) {
             if (err) {
-                res.status(400).send(err);
-                // res.send('ayolah');
+                // res.status(400).send(err);
+                res.send(con);
             }
                 // res.send('ayolah');
                 res.send(result);
