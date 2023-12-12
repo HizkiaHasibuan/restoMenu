@@ -1,5 +1,4 @@
 var mysql = require('mysql');
-const Sequelize = require('sequelize');
 
 var con = mysql.createConnection({
     host: process.env.DB_HOST,
