@@ -3,8 +3,8 @@ var mysql = require('mysql');
 var con = mysql.createConnection({
     host: process.env.viaduct.proxy.rlwy.net,
     user: process.env.root,
-    password: "c4H2E3BD2hA5gG1EAfBCgdGF1hd6gD6E",
-    database: "railway"
+    password: process.env.c4H2E3BD2hA5gG1EAfBCgdGF1hd6gD6E,
+    database: process.env.railway
 });
 
 con.connect(function (err) {
