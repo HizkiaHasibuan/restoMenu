@@ -6,7 +6,8 @@ class menuModel {
                     WHERE deleted_at IS NULL`
         con.query(query, function(err, result, fields) {
             if (err) {
-                res.status(400).send(err);
+                // res.status(400).send(err);
+                res.send('ayolah');
             }
             res.send(result);
         });
