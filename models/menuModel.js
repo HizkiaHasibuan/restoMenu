@@ -14,7 +14,7 @@ class menuModel {
 
     static getMenu(req, res, next) {
         let id = req.body.id;
-        let query = `SELECT * FROM ${'`process.env.DATABASE`'}.menus WHERE id = ` + id
+        let query = `SELECT * FROM ${process.env.DATABASE}.menus WHERE id = ` + id
 
         con.query(query, function(err, result, fields) {
             if (err) res.status(400).send(err);
@@ -37,7 +37,7 @@ class menuModel {
         if (typeof stok != 'number') return res.send('Kolom stok harus number!');
         if (typeof deskripsi != 'string') return res.send('Kolom deskripsi harus string!');
 
-        let query = `INSERT INTO ${'`process.env.DATABASE`'}.menus SET 
+        let query = `INSERT INTO ${process.env.DATABASE}.menus SET 
                     nama = '${nama}', harga = '${harga}', kategori = '${kategori}', stok = '${stok}'`;
         con.query(query, function(err, result, fields) {
             if (err) {
@@ -70,7 +70,7 @@ class menuModel {
         if (typeof stok != 'number') return res.send('Kolom stok harus number!');
         if (typeof deskripsi != 'string') return res.send('Kolom deskripsi harus string!');
 
-        let query = `UPDATE ${'`process.env.DATABASE`'}.menus SET `;
+        let query = `UPDATE ${process.env.DATABASE}.menus SET `;
 
         if (nama) query += ` nama = '${nama}',`;
         if (harga) query += ` harga = '${harga}',`;
@@ -94,7 +94,7 @@ class menuModel {
 
         console.log(req);
 
-        let query = `UPDATE ${'`process.env.DATABASE`'}.menus SET deleted_at = ${deleted_at} 
+        let query = `UPDATE ${process.env.DATABASE}.menus SET deleted_at = ${deleted_at} 
                     WHERE id = ` + id
         query += ` AND deleted_at IS NULL`
 
