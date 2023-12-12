@@ -2,7 +2,7 @@ const con = require('../config/config');
 
 class menuModel {
     static getAllMenu(req, res, next) {
-        let query = 'SELECT * FROM menus'
+        let query = `SELECT * FROM ${database}.menus`
         con.query(query, function(err, result, fields) {
             if (err) {
                 res.status(400).send(err);
