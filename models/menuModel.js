@@ -1,5 +1,6 @@
 const con = require('../config/config');
-
+const dotenv = require('dotenv');
+dotenv.config();
 class menuModel {
     static getAllMenu(req, res, next) {
         let query = `SELECT * FROM ${process.env.DATABASE}.menus`
